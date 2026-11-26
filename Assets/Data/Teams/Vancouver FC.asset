@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f424416aa174054a9ad957ae2f6db5e, type: 3}
+  m_Name: Vancouver FC
+  m_EditorClassIdentifier: Assembly-CSharp::TeamData
+  teamName: Vancouver FC
+  shortName: VAN
+  teamColor: {r: 0.13333334, g: 0.627451, b: 0.41960785, a: 1}
+  clubLogo: {fileID: 0}
+  transferBudget: 18000000
+  squad:
+  - {fileID: 11400000, guid: 458768d94a741f64e9de9245c72102a7, type: 2}
+  - {fileID: 11400000, guid: a916bc9675633034280c57c7eeacce9d, type: 2}
+  - {fileID: 11400000, guid: eff468e1226605b4cb9bcd39de8e44ac, type: 2}
+  - {fileID: 11400000, guid: 3e9b7a2a5cf7c094887c0cd4e0414581, type: 2}
+  - {fileID: 11400000, guid: 67b25f0a2ead921499eeb8a749c23802, type: 2}
+  - {fileID: 11400000, guid: a96f410c16b353e4d847b5a25409b348, type: 2}
+  - {fileID: 11400000, guid: f803f3788a05520439449d9a517fb942, type: 2}
+  - {fileID: 11400000, guid: 6b407dc91810c4b41af146e699344de0, type: 2}
+  - {fileID: 11400000, guid: d9680fd2ce12e6e4d8e3a0b6722a1904, type: 2}
+  - {fileID: 11400000, guid: e4dcc2daf049d874fb61ca1a16173a52, type: 2}
+  - {fileID: 11400000, guid: b0935d6d53887be4490ff9d0d8e34491, type: 2}
+  - {fileID: 11400000, guid: 5bc32f01ec8b74c42af54e74fd84cdeb, type: 2}
+  - {fileID: 11400000, guid: 257a8abc92fc2004381b929d23481a48, type: 2}
+  - {fileID: 11400000, guid: 631f2fd2709dde34d980194ba33e8b02, type: 2}
+  - {fileID: 11400000, guid: 7312b0f6f656cb142bfebc8937180345, type: 2}
+  - {fileID: 11400000, guid: 02478591b029a0e42a3275361484098d, type: 2}
+  - {fileID: 11400000, guid: bcae50b1014137c489f62f807286402b, type: 2}
+  - {fileID: 11400000, guid: b91facb40945352479d416a0aad7f485, type: 2}
+  - {fileID: 11400000, guid: 51a9ca293ea74c34c84e74cea9fe0940, type: 2}
+  - {fileID: 11400000, guid: 82b9128908c3ada4db8032f86d7cbbb8, type: 2}
+  - {fileID: 11400000, guid: e12b37f010ea8b24eb8861faeeaa5401, type: 2}
+  - {fileID: 11400000, guid: bd3794b07b21685408028d66c1f0b121, type: 2}
+  startingLineup:
+  - {fileID: 11400000, guid: 458768d94a741f64e9de9245c72102a7, type: 2}
+  - {fileID: 11400000, guid: a916bc9675633034280c57c7eeacce9d, type: 2}
+  - {fileID: 11400000, guid: eff468e1226605b4cb9bcd39de8e44ac, type: 2}
+  - {fileID: 11400000, guid: 3e9b7a2a5cf7c094887c0cd4e0414581, type: 2}
+  - {fileID: 11400000, guid: 67b25f0a2ead921499eeb8a749c23802, type: 2}
+  - {fileID: 11400000, guid: a96f410c16b353e4d847b5a25409b348, type: 2}
+  - {fileID: 11400000, guid: f803f3788a05520439449d9a517fb942, type: 2}
+  - {fileID: 11400000, guid: 6b407dc91810c4b41af146e699344de0, type: 2}
+  - {fileID: 11400000, guid: d9680fd2ce12e6e4d8e3a0b6722a1904, type: 2}
+  - {fileID: 11400000, guid: e4dcc2daf049d874fb61ca1a16173a52, type: 2}
+  - {fileID: 11400000, guid: b0935d6d53887be4490ff9d0d8e34491, type: 2}

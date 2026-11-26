@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 03_Leo_Martin
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Leo Martin
+  age: 33
+  shirtNumber: 3
+  preferredPosition: 1
+  passing: 70
+  shooting: 42
+  defending: 91
+  dribbling: 85
+  goalkeeping: 18
+  speed: 58
+  stamina: 82
+  strength: 87
+  positioning: 75
+  decisionMaking: 71
+  marketValue: 339000
+  potential: 78

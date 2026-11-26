@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f424416aa174054a9ad957ae2f6db5e, type: 3}
+  m_Name: Montreal FC
+  m_EditorClassIdentifier: Assembly-CSharp::TeamData
+  teamName: Montreal FC
+  shortName: MTL
+  teamColor: {r: 0.4745098, g: 0.28627452, b: 0.8392157, a: 1}
+  clubLogo: {fileID: 0}
+  transferBudget: 16000000
+  squad:
+  - {fileID: 11400000, guid: 2292a65eff3a3574ab8e71820be62f07, type: 2}
+  - {fileID: 11400000, guid: 9344b2c951c8a1645b2c38a08c023892, type: 2}
+  - {fileID: 11400000, guid: b6c97edd7ce4a8a409522102cb520f00, type: 2}
+  - {fileID: 11400000, guid: a3d53f071487f334fb89cd2640ca2092, type: 2}
+  - {fileID: 11400000, guid: fa1d62583f249d64eb91d596531c9340, type: 2}
+  - {fileID: 11400000, guid: 90da84856bb8f40488415fc15c08d225, type: 2}
+  - {fileID: 11400000, guid: 0a38c38b1a420084897543a8a6cf2aba, type: 2}
+  - {fileID: 11400000, guid: 7e37d05f5c1cd0349a4358d2189e10a3, type: 2}
+  - {fileID: 11400000, guid: f34ee6ad710964446bfcefbd209cfe99, type: 2}
+  - {fileID: 11400000, guid: bbccb232d1b616246b8172767f949b15, type: 2}
+  - {fileID: 11400000, guid: fe827bf9abf693c4eb8335ba720d8e36, type: 2}
+  - {fileID: 11400000, guid: e601dc3d50205b94b9813015b2aa4a66, type: 2}
+  - {fileID: 11400000, guid: d8d06cfdadc8b014e84ed21a14f1a2ac, type: 2}
+  - {fileID: 11400000, guid: 9f91d3d807cf2ec4c941f695287628f2, type: 2}
+  - {fileID: 11400000, guid: 45da328681d4a9c4ead1a2d07f3b6cf0, type: 2}
+  - {fileID: 11400000, guid: 09f71d8f1ad80cd46831863c9af39197, type: 2}
+  - {fileID: 11400000, guid: b3d32b5fd0e0740439d4e3cff1b476a5, type: 2}
+  - {fileID: 11400000, guid: 7c9fc2fa16bdbdf4896e69240c8b42b2, type: 2}
+  - {fileID: 11400000, guid: 0c33a1f39c8757840a60434328436437, type: 2}
+  - {fileID: 11400000, guid: 6485f4a38640a004db5e0f26f06df44c, type: 2}
+  - {fileID: 11400000, guid: a5bfce3cde7dbff4fa928f08de581617, type: 2}
+  - {fileID: 11400000, guid: 3f5fca8c6cb6733458255b8388d63954, type: 2}
+  startingLineup:
+  - {fileID: 11400000, guid: 2292a65eff3a3574ab8e71820be62f07, type: 2}
+  - {fileID: 11400000, guid: 9344b2c951c8a1645b2c38a08c023892, type: 2}
+  - {fileID: 11400000, guid: b6c97edd7ce4a8a409522102cb520f00, type: 2}
+  - {fileID: 11400000, guid: a3d53f071487f334fb89cd2640ca2092, type: 2}
+  - {fileID: 11400000, guid: fa1d62583f249d64eb91d596531c9340, type: 2}
+  - {fileID: 11400000, guid: 90da84856bb8f40488415fc15c08d225, type: 2}
+  - {fileID: 11400000, guid: 0a38c38b1a420084897543a8a6cf2aba, type: 2}
+  - {fileID: 11400000, guid: 7e37d05f5c1cd0349a4358d2189e10a3, type: 2}
+  - {fileID: 11400000, guid: f34ee6ad710964446bfcefbd209cfe99, type: 2}
+  - {fileID: 11400000, guid: bbccb232d1b616246b8172767f949b15, type: 2}
+  - {fileID: 11400000, guid: fe827bf9abf693c4eb8335ba720d8e36, type: 2}

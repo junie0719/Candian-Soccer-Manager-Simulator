@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 10_Jack_Anderson
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Jack Anderson
+  age: 34
+  shirtNumber: 10
+  preferredPosition: 2
+  passing: 72
+  shooting: 43
+  defending: 47
+  dribbling: 60
+  goalkeeping: 5
+  speed: 80
+  stamina: 80
+  strength: 62
+  positioning: 83
+  decisionMaking: 74
+  marketValue: 109000
+  potential: 75

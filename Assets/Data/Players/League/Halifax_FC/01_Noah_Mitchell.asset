@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 01_Noah_Mitchell
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Noah Mitchell
+  age: 22
+  shirtNumber: 1
+  preferredPosition: 0
+  passing: 69
+  shooting: 10
+  defending: 54
+  dribbling: 38
+  goalkeeping: 77
+  speed: 57
+  stamina: 65
+  strength: 62
+  positioning: 58
+  decisionMaking: 68
+  marketValue: 820000
+  potential: 71

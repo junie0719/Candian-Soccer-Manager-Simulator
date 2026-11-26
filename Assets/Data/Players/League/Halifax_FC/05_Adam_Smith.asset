@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 05_Adam_Smith
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Adam Smith
+  age: 24
+  shirtNumber: 5
+  preferredPosition: 1
+  passing: 54
+  shooting: 39
+  defending: 74
+  dribbling: 68
+  goalkeeping: 17
+  speed: 61
+  stamina: 66
+  strength: 64
+  positioning: 55
+  decisionMaking: 58
+  marketValue: 490000
+  potential: 62

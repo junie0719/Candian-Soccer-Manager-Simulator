@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 10_Daniel_Williams
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Daniel Williams
+  age: 27
+  shirtNumber: 10
+  preferredPosition: 3
+  passing: 83
+  shooting: 83
+  defending: 61
+  dribbling: 92
+  goalkeeping: 17
+  speed: 85
+  stamina: 90
+  strength: 84
+  positioning: 84
+  decisionMaking: 73
+  marketValue: 1300000
+  potential: 79

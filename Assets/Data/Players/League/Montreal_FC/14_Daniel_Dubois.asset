@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 14_Daniel_Dubois
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Daniel Dubois
+  age: 32
+  shirtNumber: 14
+  preferredPosition: 1
+  passing: 60
+  shooting: 52
+  defending: 71
+  dribbling: 66
+  goalkeeping: 9
+  speed: 70
+  stamina: 69
+  strength: 73
+  positioning: 66
+  decisionMaking: 60
+  marketValue: 360000
+  potential: 67

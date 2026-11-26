@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 15_Lucas_Kim
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Lucas Kim
+  age: 22
+  shirtNumber: 15
+  preferredPosition: 1
+  passing: 74
+  shooting: 62
+  defending: 86
+  dribbling: 69
+  goalkeeping: 11
+  speed: 68
+  stamina: 76
+  strength: 84
+  positioning: 75
+  decisionMaking: 78
+  marketValue: 1100000
+  potential: 77

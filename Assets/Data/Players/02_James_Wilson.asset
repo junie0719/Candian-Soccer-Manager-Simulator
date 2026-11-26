@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 02_James_Wilson
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: James Wilson
+  age: 23
+  shirtNumber: 2
+  preferredPosition: 1
+  passing: 74
+  shooting: 46
+  defending: 81
+  dribbling: 60
+  goalkeeping: 7
+  speed: 67
+  stamina: 95
+  strength: 83
+  positioning: 67
+  decisionMaking: 60
+  marketValue: 234000
+  potential: 87

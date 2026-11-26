@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 21_Andre_Williams
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Andre Williams
+  age: 25
+  shirtNumber: 21
+  preferredPosition: 3
+  passing: 67
+  shooting: 66
+  defending: 55
+  dribbling: 75
+  goalkeeping: 10
+  speed: 77
+  stamina: 71
+  strength: 67
+  positioning: 65
+  decisionMaking: 67
+  marketValue: 630000
+  potential: 67

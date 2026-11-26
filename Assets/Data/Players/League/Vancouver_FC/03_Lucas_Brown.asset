@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 03_Lucas_Brown
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Lucas Brown
+  age: 34
+  shirtNumber: 3
+  preferredPosition: 1
+  passing: 80
+  shooting: 71
+  defending: 84
+  dribbling: 85
+  goalkeeping: 18
+  speed: 80
+  stamina: 86
+  strength: 93
+  positioning: 87
+  decisionMaking: 82
+  marketValue: 890000
+  potential: 82

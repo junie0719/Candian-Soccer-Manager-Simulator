@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 14_Leo_Williams
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Leo Williams
+  age: 34
+  shirtNumber: 14
+  preferredPosition: 1
+  passing: 66
+  shooting: 48
+  defending: 84
+  dribbling: 75
+  goalkeeping: 17
+  speed: 74
+  stamina: 70
+  strength: 79
+  positioning: 77
+  decisionMaking: 71
+  marketValue: 520000
+  potential: 71

@@ -1,0 +1,512 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1101170946073807277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7382440822724886926}
+  - component: {fileID: 3743452352502314342}
+  - component: {fileID: 4836573067428973576}
+  - component: {fileID: 8527616593558642356}
+  m_Layer: 0
+  m_Name: LeagueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7382440822724886926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101170946073807277}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.89377, y: -1.32066, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3743452352502314342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101170946073807277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c498c0e86199c394bb2748f530446b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeagueManager
+  leagueName: Canadian Premier League
+  seasonYear: 2026
+  teams:
+  - {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+  - {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+  - {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+  - {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+  - {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+  - {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+  - {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+  - {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+  managedTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+  currentMatchday: 1
+  totalMatchdays: 14
+  fixtures:
+  - matchday: 1
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 1
+    awayScore: 2
+    played: 1
+  - matchday: 1
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 2
+    awayScore: 1
+    played: 1
+  - matchday: 1
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 2
+    awayScore: 2
+    played: 1
+  - matchday: 1
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 4
+    awayScore: 3
+    played: 1
+  - matchday: 2
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 2
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 2
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 2
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 3
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 3
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 3
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 3
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 4
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 4
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 4
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 4
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 5
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 5
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 5
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 5
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 6
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 6
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 6
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 6
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 7
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 7
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 7
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 7
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 8
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 8
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 8
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 8
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 9
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 9
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 9
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 9
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 10
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 10
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 10
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 10
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 11
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 11
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 11
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 11
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 12
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 12
+    homeTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 12
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 12
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 13
+    homeTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 13
+    homeTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    awayTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 13
+    homeTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    awayTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 13
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 14
+    homeTeam: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    awayTeam: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 14
+    homeTeam: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    awayTeam: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 14
+    homeTeam: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    awayTeam: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+  - matchday: 14
+    homeTeam: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    awayTeam: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    homeScore: 0
+    awayScore: 0
+    played: 0
+--- !u!114 &4836573067428973576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101170946073807277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab998793d8be60e47a35b1758202c98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeagueStandings
+  leagueManager: {fileID: 3743452352502314342}
+  standings:
+  - team: {fileID: 11400000, guid: f4c36379bb6e3ac4bbff3fbfac6c9767, type: 2}
+    played: 1
+    wins: 1
+    draws: 0
+    losses: 0
+    goalsFor: 4
+    goalsAgainst: 3
+    goalDifference: 1
+    points: 3
+    position: 1
+  - team: {fileID: 11400000, guid: 977f96382ab4a3342b652315e1acbded, type: 2}
+    played: 1
+    wins: 1
+    draws: 0
+    losses: 0
+    goalsFor: 2
+    goalsAgainst: 1
+    goalDifference: 1
+    points: 3
+    position: 2
+  - team: {fileID: 11400000, guid: 0b1836c77686a834dad15de51e9df8b2, type: 2}
+    played: 1
+    wins: 1
+    draws: 0
+    losses: 0
+    goalsFor: 2
+    goalsAgainst: 1
+    goalDifference: 1
+    points: 3
+    position: 3
+  - team: {fileID: 11400000, guid: efb3a87f5b598174382e8307674b0242, type: 2}
+    played: 1
+    wins: 0
+    draws: 1
+    losses: 0
+    goalsFor: 2
+    goalsAgainst: 2
+    goalDifference: 0
+    points: 1
+    position: 4
+  - team: {fileID: 11400000, guid: e5ecbd5544f5b6f459af03541af677c6, type: 2}
+    played: 1
+    wins: 0
+    draws: 1
+    losses: 0
+    goalsFor: 2
+    goalsAgainst: 2
+    goalDifference: 0
+    points: 1
+    position: 5
+  - team: {fileID: 11400000, guid: 6501b0a5615fa6f4683d80f8fe0a9973, type: 2}
+    played: 1
+    wins: 0
+    draws: 0
+    losses: 1
+    goalsFor: 3
+    goalsAgainst: 4
+    goalDifference: -1
+    points: 0
+    position: 6
+  - team: {fileID: 11400000, guid: 262ef73384759084a804d2fb3133e111, type: 2}
+    played: 1
+    wins: 0
+    draws: 0
+    losses: 1
+    goalsFor: 1
+    goalsAgainst: 2
+    goalDifference: -1
+    points: 0
+    position: 7
+  - team: {fileID: 11400000, guid: 195ea925d8f83ec4eac26c0de9519166, type: 2}
+    played: 1
+    wins: 0
+    draws: 0
+    losses: 1
+    goalsFor: 1
+    goalsAgainst: 2
+    goalDifference: -1
+    points: 0
+    position: 8
+--- !u!114 &8527616593558642356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101170946073807277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30abf6212ff92d646b2f1e8769fa50ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeagueSimulator
+  leagueManager: {fileID: 3743452352502314342}
+  leagueStandings: {fileID: 4836573067428973576}
+  averageGoals: 1.35
+  homeAdvantage: 0.25
+  strengthInfluence: 0.035
+  maximumGoals: 8
+  seasonFinished: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f424416aa174054a9ad957ae2f6db5e, type: 3}
+  m_Name: Winnipeg FC
+  m_EditorClassIdentifier: Assembly-CSharp::TeamData
+  teamName: Winnipeg FC
+  shortName: WPG
+  teamColor: {r: 0.09803922, g: 0.72156864, b: 0.76862746, a: 1}
+  clubLogo: {fileID: 0}
+  transferBudget: 8000000
+  squad:
+  - {fileID: 11400000, guid: 0a155edddd9978c459fc8f1fa436f6bb, type: 2}
+  - {fileID: 11400000, guid: 2e7a46524d81e2c4bbbf62b22e05b9a6, type: 2}
+  - {fileID: 11400000, guid: 23c19388d996d7d478c4856ea331adb2, type: 2}
+  - {fileID: 11400000, guid: be6118beeeeb27d43ab1ec587c5e7382, type: 2}
+  - {fileID: 11400000, guid: ac7613604c8b1174ea5b9db9e29a954b, type: 2}
+  - {fileID: 11400000, guid: 941604b8d8039494092e00c5aec61284, type: 2}
+  - {fileID: 11400000, guid: 2ff53f30fe7d8994eb1508c479809302, type: 2}
+  - {fileID: 11400000, guid: b3839e48aad83ff4cb879b9ac180fb1b, type: 2}
+  - {fileID: 11400000, guid: aa7b2a3ac91c23e468cddcdc439e986f, type: 2}
+  - {fileID: 11400000, guid: 1ea0c2b6a799f3e4faae45fc74618b3c, type: 2}
+  - {fileID: 11400000, guid: 5fea2beb24052024ea87d3d44f49a9b5, type: 2}
+  - {fileID: 11400000, guid: e5b1a5ad9a367f84988fbaa4cb25b149, type: 2}
+  - {fileID: 11400000, guid: 46e1fdb993a39be44be97023c019c886, type: 2}
+  - {fileID: 11400000, guid: aeb3c462872573f42a1c4f68346c7465, type: 2}
+  - {fileID: 11400000, guid: ded908ddcc17232419a8dfbccb9118e3, type: 2}
+  - {fileID: 11400000, guid: 5d03ad218e21d494ca9d238f0962d730, type: 2}
+  - {fileID: 11400000, guid: c45a2d5cf7c82974d977498eb15d1b19, type: 2}
+  - {fileID: 11400000, guid: cbd15754bfb729d4aa037def949e93de, type: 2}
+  - {fileID: 11400000, guid: 870d637fa35da834fbe68ffd5bebf6e9, type: 2}
+  - {fileID: 11400000, guid: 0e15eadf80a9bbe458403aab3c4380fb, type: 2}
+  - {fileID: 11400000, guid: 708ccc2fe564fca4f8d3f8838a082a7e, type: 2}
+  - {fileID: 11400000, guid: 7b9d62b557e6d2b4eab89f68b31afb53, type: 2}
+  startingLineup:
+  - {fileID: 11400000, guid: 0a155edddd9978c459fc8f1fa436f6bb, type: 2}
+  - {fileID: 11400000, guid: 2e7a46524d81e2c4bbbf62b22e05b9a6, type: 2}
+  - {fileID: 11400000, guid: 23c19388d996d7d478c4856ea331adb2, type: 2}
+  - {fileID: 11400000, guid: be6118beeeeb27d43ab1ec587c5e7382, type: 2}
+  - {fileID: 11400000, guid: ac7613604c8b1174ea5b9db9e29a954b, type: 2}
+  - {fileID: 11400000, guid: 941604b8d8039494092e00c5aec61284, type: 2}
+  - {fileID: 11400000, guid: 2ff53f30fe7d8994eb1508c479809302, type: 2}
+  - {fileID: 11400000, guid: b3839e48aad83ff4cb879b9ac180fb1b, type: 2}
+  - {fileID: 11400000, guid: aa7b2a3ac91c23e468cddcdc439e986f, type: 2}
+  - {fileID: 11400000, guid: 1ea0c2b6a799f3e4faae45fc74618b3c, type: 2}
+  - {fileID: 11400000, guid: 5fea2beb24052024ea87d3d44f49a9b5, type: 2}

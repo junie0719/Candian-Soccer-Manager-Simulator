@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 21_Jacob_Moore
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Jacob Moore
+  age: 25
+  shirtNumber: 21
+  preferredPosition: 3
+  passing: 61
+  shooting: 74
+  defending: 52
+  dribbling: 47
+  goalkeeping: 20
+  speed: 69
+  stamina: 78
+  strength: 53
+  positioning: 73
+  decisionMaking: 73
+  marketValue: 258000
+  potential: 74

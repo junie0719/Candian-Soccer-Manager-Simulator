@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 09_David_Adams
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: David Adams
+  age: 20
+  shirtNumber: 9
+  preferredPosition: 3
+  passing: 75
+  shooting: 80
+  defending: 53
+  dribbling: 94
+  goalkeeping: 11
+  speed: 88
+  stamina: 95
+  strength: 57
+  positioning: 64
+  decisionMaking: 63
+  marketValue: 165000
+  potential: 96

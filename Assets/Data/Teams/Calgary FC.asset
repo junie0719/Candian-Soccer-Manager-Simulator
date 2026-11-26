@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f424416aa174054a9ad957ae2f6db5e, type: 3}
+  m_Name: Calgary FC
+  m_EditorClassIdentifier: Assembly-CSharp::TeamData
+  teamName: Calgary FC
+  shortName: CFC
+  teamColor: {r: 1, g: 0, b: 0, a: 1}
+  clubLogo: {fileID: 0}
+  transferBudget: 12000000
+  squad:
+  - {fileID: 11400000, guid: e209dc233df6e1840b155949cbb1bf2b, type: 2}
+  - {fileID: 11400000, guid: a481e1f55557d0e4490f38d7706097ea, type: 2}
+  - {fileID: 11400000, guid: a7995e5462e2c3b48972e9f6a9f70540, type: 2}
+  - {fileID: 11400000, guid: 238df92bc33260a458c628118af19464, type: 2}
+  - {fileID: 11400000, guid: 8b3b9968eef020940968815ccca22579, type: 2}
+  - {fileID: 11400000, guid: 8345c5d27df61a048b203a9b985852dc, type: 2}
+  - {fileID: 11400000, guid: 71bdd0a44086d8040ae21a23aa09deb4, type: 2}
+  - {fileID: 11400000, guid: 592901e1847f86e46ab88b6e6758ee3e, type: 2}
+  - {fileID: 11400000, guid: fbd16d300ac2e844da0bb26467a42d86, type: 2}
+  - {fileID: 11400000, guid: c5ba763bde8bc8c4b843a243ab8a1a65, type: 2}
+  - {fileID: 11400000, guid: 31108476ad3e65245b26b901e38eb626, type: 2}
+  - {fileID: 11400000, guid: 9eba64df848f8f74696dbda607dc48ba, type: 2}
+  - {fileID: 11400000, guid: 096667e51e0761a46886f91e3d08da56, type: 2}
+  - {fileID: 11400000, guid: 770992cef98c1474792ddaa1dbe6fb22, type: 2}
+  - {fileID: 11400000, guid: aeda8d9bcbc8f704f91438ff1e7602a8, type: 2}
+  - {fileID: 11400000, guid: e0054854a32b8dc4094b3497f08d7cb8, type: 2}
+  - {fileID: 11400000, guid: 5840022f079d11a4da4b96955b3e306a, type: 2}
+  - {fileID: 11400000, guid: de8ba532916a18746b37f3e97a54d6b4, type: 2}
+  - {fileID: 11400000, guid: ae0b5c1ac35f10d4ca467ad9c1d1b395, type: 2}
+  - {fileID: 11400000, guid: ba80719ac4dec63448b608a0382c6267, type: 2}
+  - {fileID: 11400000, guid: 30cd046d64d5b9847a8e453b32ea8b04, type: 2}
+  - {fileID: 11400000, guid: 084f1b1f22bca2e4ab3d32ab87aa60d6, type: 2}
+  startingLineup:
+  - {fileID: 11400000, guid: e209dc233df6e1840b155949cbb1bf2b, type: 2}
+  - {fileID: 11400000, guid: a481e1f55557d0e4490f38d7706097ea, type: 2}
+  - {fileID: 11400000, guid: a7995e5462e2c3b48972e9f6a9f70540, type: 2}
+  - {fileID: 11400000, guid: 238df92bc33260a458c628118af19464, type: 2}
+  - {fileID: 11400000, guid: 8b3b9968eef020940968815ccca22579, type: 2}
+  - {fileID: 11400000, guid: 8345c5d27df61a048b203a9b985852dc, type: 2}
+  - {fileID: 11400000, guid: 71bdd0a44086d8040ae21a23aa09deb4, type: 2}
+  - {fileID: 11400000, guid: 592901e1847f86e46ab88b6e6758ee3e, type: 2}
+  - {fileID: 11400000, guid: fbd16d300ac2e844da0bb26467a42d86, type: 2}
+  - {fileID: 11400000, guid: c5ba763bde8bc8c4b843a243ab8a1a65, type: 2}
+  - {fileID: 11400000, guid: 31108476ad3e65245b26b901e38eb626, type: 2}

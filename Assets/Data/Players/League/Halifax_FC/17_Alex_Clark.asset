@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 17_Alex_Clark
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Alex Clark
+  age: 31
+  shirtNumber: 17
+  preferredPosition: 2
+  passing: 62
+  shooting: 44
+  defending: 49
+  dribbling: 60
+  goalkeeping: 5
+  speed: 56
+  stamina: 66
+  strength: 55
+  positioning: 53
+  decisionMaking: 62
+  marketValue: 230000
+  potential: 60

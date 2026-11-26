@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 19_Ryan_Garcia
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Ryan Garcia
+  age: 25
+  shirtNumber: 19
+  preferredPosition: 2
+  passing: 82
+  shooting: 60
+  defending: 57
+  dribbling: 78
+  goalkeeping: 13
+  speed: 74
+  stamina: 83
+  strength: 67
+  positioning: 67
+  decisionMaking: 75
+  marketValue: 1000000
+  potential: 74

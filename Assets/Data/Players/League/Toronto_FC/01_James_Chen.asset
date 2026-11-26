@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 01_James_Chen
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: James Chen
+  age: 31
+  shirtNumber: 1
+  preferredPosition: 0
+  passing: 76
+  shooting: 10
+  defending: 67
+  dribbling: 53
+  goalkeeping: 91
+  speed: 69
+  stamina: 91
+  strength: 75
+  positioning: 89
+  decisionMaking: 85
+  marketValue: 1030000
+  potential: 84

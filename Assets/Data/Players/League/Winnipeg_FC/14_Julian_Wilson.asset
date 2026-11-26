@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ea6ef2fc296eb4fbc165f4cdeca9f3, type: 3}
+  m_Name: 14_Julian_Wilson
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerData
+  playerName: Julian Wilson
+  age: 28
+  shirtNumber: 14
+  preferredPosition: 1
+  passing: 56
+  shooting: 43
+  defending: 69
+  dribbling: 61
+  goalkeeping: 19
+  speed: 56
+  stamina: 57
+  strength: 65
+  positioning: 51
+  decisionMaking: 47
+  marketValue: 300000
+  potential: 59
