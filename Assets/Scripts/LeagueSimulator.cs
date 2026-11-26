@@ -27,7 +27,6 @@ public class LeagueSimulator : MonoBehaviour
             leagueManager.totalMatchdays)
         {
             seasonFinished = true;
-
             Debug.Log("Season already completed.");
             return;
         }
@@ -40,14 +39,10 @@ public class LeagueSimulator : MonoBehaviour
         if (fixtures.Count == 0)
             return;
 
-        Debug.Log("SIMULATING MATCHDAY " + day);
-
         foreach (LeagueFixture fixture in fixtures)
         {
             if (!fixture.played)
-            {
                 SimulateFixture(fixture);
-            }
         }
 
         AdvanceMatchday();
@@ -67,7 +62,6 @@ public class LeagueSimulator : MonoBehaviour
             if (fixture.played)
                 continue;
 
-            // Skip the user's club.
             if (fixture.homeTeam ==
                 leagueManager.managedTeam ||
                 fixture.awayTeam ==
@@ -89,17 +83,47 @@ public class LeagueSimulator : MonoBehaviour
             fixture.awayTeam == null)
             return;
 
+        int homeGoals = 0;
+        int awayGoals = 0;
+
+        SimulateRemainingMatch(
+            fixture.homeTeam,
+            fixture.awayTeam,
+            0f,
+            ref homeGoals,
+            ref awayGoals);
+
+        leagueStandings.RecordResult(
+            fixture,
+            homeGoals,
+            awayGoals);
+    }
+
+    public void SimulateRemainingMatch(
+        TeamData homeTeam,
+        TeamData awayTeam,
+        float currentMinute,
+        ref int homeScore,
+        ref int awayScore)
+    {
+        float remainingFraction =
+            Mathf.Clamp01(
+                (90f - currentMinute) / 90f);
+
+        if (remainingFraction <= 0f)
+            return;
+
         float homeAttack =
-            GetAttackStrength(fixture.homeTeam);
+            GetAttackStrength(homeTeam);
 
         float awayAttack =
-            GetAttackStrength(fixture.awayTeam);
+            GetAttackStrength(awayTeam);
 
         float homeDefense =
-            GetDefenseStrength(fixture.homeTeam);
+            GetDefenseStrength(homeTeam);
 
         float awayDefense =
-            GetDefenseStrength(fixture.awayTeam);
+            GetDefenseStrength(awayTeam);
 
         float homeExpectedGoals = Mathf.Clamp(
             averageGoals +
@@ -116,16 +140,25 @@ public class LeagueSimulator : MonoBehaviour
             0.15f,
             4.5f);
 
-        int homeGoals =
-            GenerateGoals(homeExpectedGoals);
+        int additionalHomeGoals =
+            GenerateGoals(
+                homeExpectedGoals * remainingFraction);
 
-        int awayGoals =
-            GenerateGoals(awayExpectedGoals);
+        int additionalAwayGoals =
+            GenerateGoals(
+                awayExpectedGoals * remainingFraction);
 
-        leagueStandings.RecordResult(
-            fixture,
-            homeGoals,
-            awayGoals);
+        homeScore += additionalHomeGoals;
+        awayScore += additionalAwayGoals;
+
+        Debug.Log(
+            "Simulated remaining match from minute " +
+            currentMinute.ToString("F1") +
+            ". Additional goals: " +
+            additionalHomeGoals + " - " +
+            additionalAwayGoals +
+            ". Final score: " +
+            homeScore + " - " + awayScore);
     }
 
     public float GetAttackStrength(TeamData team)
@@ -225,7 +258,6 @@ public class LeagueSimulator : MonoBehaviour
 
     int GenerateGoals(float expectedGoals)
     {
-        // Poisson distribution.
         float limit = Mathf.Exp(-expectedGoals);
         float probability = 1f;
 

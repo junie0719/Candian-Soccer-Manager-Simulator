@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class ScoreboardUI : MonoBehaviour
     [Header("Match References")]
     public MatchRules matchRules;
     public TeamSpawner teamSpawner;
+    public LeagueSimulator leagueSimulator;
 
     [Header("UI References")]
     public TMP_Text homeTeamText;
@@ -15,8 +17,10 @@ public class ScoreboardUI : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text timerText;
 
-    [Header("Return Button")]
+    [Header("Match Buttons")]
     public Button returnToManagementButton;
+    public Button simulateRemainingButton;
+
     public string managementSceneName = "managescene";
 
     [Header("Match Time")]
@@ -44,6 +48,12 @@ public class ScoreboardUI : MonoBehaviour
         isHalfTime = false;
         returning = false;
 
+        if (leagueSimulator == null)
+        {
+            leagueSimulator =
+                FindFirstObjectByType<LeagueSimulator>();
+        }
+
         if (returnToManagementButton != null)
         {
             returnToManagementButton.onClick.RemoveListener(
@@ -54,9 +64,17 @@ public class ScoreboardUI : MonoBehaviour
 
             returnToManagementButton.gameObject.SetActive(false);
         }
-        else
+
+        if (simulateRemainingButton != null)
         {
-            Debug.LogError("Return button is not assigned!");
+            simulateRemainingButton.onClick.RemoveListener(
+                SimulateAndExit);
+
+            simulateRemainingButton.onClick.AddListener(
+                SimulateAndExit);
+
+            simulateRemainingButton.gameObject.SetActive(true);
+            simulateRemainingButton.interactable = true;
         }
 
         InitializeTeamNames();
@@ -104,8 +122,7 @@ public class ScoreboardUI : MonoBehaviour
             elapsedTime /
             Mathf.Max(realMatchDuration, 1f) * 90f,
             0f,
-            90f
-        );
+            90f);
 
         if (!halfTimeReached && matchMinute >= 45f)
         {
@@ -120,6 +137,45 @@ public class ScoreboardUI : MonoBehaviour
         }
 
         UpdateClock();
+    }
+
+    public void SimulateAndExit()
+    {
+        if (matchFinished || returning)
+            return;
+
+        if (matchRules == null ||
+            teamSpawner == null ||
+            leagueSimulator == null)
+        {
+            Debug.LogError(
+                "Simulation references are missing!");
+            return;
+        }
+
+        if (teamSpawner.homeTeam == null ||
+            teamSpawner.awayTeam == null)
+        {
+            Debug.LogError("Match teams are missing!");
+            return;
+        }
+
+        if (simulateRemainingButton != null)
+            simulateRemainingButton.interactable = false;
+
+        Debug.Log("Skipping match at minute " +
+            matchMinute.ToString("F1"));
+
+        leagueSimulator.SimulateRemainingMatch(
+            teamSpawner.homeTeam,
+            teamSpawner.awayTeam,
+            matchMinute,
+            ref matchRules.homeScore,
+            ref matchRules.awayScore);
+
+        FinishMatch();
+
+        ReturnToManagement();
     }
 
     void BeginHalfTime()
@@ -148,12 +204,22 @@ public class ScoreboardUI : MonoBehaviour
         matchFinished = true;
         matchMinute = 90f;
 
+        isHalfTime = false;
+        halfTimeReached = true;
+
         matchRules.EndMatch();
 
         UpdateScore();
 
         if (timerText != null)
             timerText.text = "FULL TIME";
+
+        if (simulateRemainingButton != null)
+        {
+            simulateRemainingButton.interactable = false;
+
+            simulateRemainingButton.gameObject.SetActive(false);
+        }
 
         if (MatchSession.currentFixture != null)
         {
@@ -168,12 +234,6 @@ public class ScoreboardUI : MonoBehaviour
             returnToManagementButton.interactable = true;
 
             returnToManagementButton.transform.SetAsLastSibling();
-
-            Debug.Log("Return button activated.");
-        }
-        else
-        {
-            Debug.LogError("Return button reference missing!");
         }
 
         Time.timeScale = 0f;
@@ -185,8 +245,6 @@ public class ScoreboardUI : MonoBehaviour
 
     public void ReturnToManagement()
     {
-        Debug.Log("Return button clicked!");
-
         if (!matchFinished || returning)
             return;
 
@@ -294,6 +352,12 @@ public class ScoreboardUI : MonoBehaviour
         {
             returnToManagementButton.onClick.RemoveListener(
                 ReturnToManagement);
+        }
+
+        if (simulateRemainingButton != null)
+        {
+            simulateRemainingButton.onClick.RemoveListener(
+                SimulateAndExit);
         }
 
         Time.timeScale = 1f;

@@ -3,12 +3,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using System.Collections.Generic;
 
 public class SquadUI : MonoBehaviour
 {
     [Header("References")]
     public LeagueManager leagueManager;
     public RectTransform squadTable;
+    public TMP_Dropdown formationDropdown;
+
+    private readonly FormationType[] formations =
+    {
+        FormationType.Formation433,
+        FormationType.Formation442,
+        FormationType.Formation4231,
+        FormationType.Formation352,
+        FormationType.Formation532,
+        FormationType.Formation343
+    };
 
     [Header("Appearance")]
     public float rowHeight = 26f;
@@ -46,13 +58,159 @@ public class SquadUI : MonoBehaviour
         selectionMessage =
             "Select a player to change your lineup.";
 
+        SetupFormationDropdown();
         RefreshSquad();
     }
 
     void Start()
     {
+        SetupFormationDropdown();
         RefreshSquad();
     }
+
+    void OnDisable()
+    {
+        if (formationDropdown != null)
+        {
+            formationDropdown.onValueChanged
+                .RemoveListener(ChangeFormation);
+        }
+    }
+
+    // ========================================
+    // FORMATION SYSTEM
+    // ========================================
+
+    void SetupFormationDropdown()
+    {
+        if (formationDropdown == null)
+            return;
+
+        formationDropdown.onValueChanged
+            .RemoveListener(ChangeFormation);
+
+        formationDropdown.ClearOptions();
+
+        formationDropdown.AddOptions(
+            formations
+                .Select(f => FormationData.GetName(f))
+                .ToList()
+        );
+
+        SyncFormationDropdown();
+
+        formationDropdown.onValueChanged
+            .AddListener(ChangeFormation);
+    }
+
+    void SyncFormationDropdown()
+    {
+        if (formationDropdown == null ||
+            leagueManager == null ||
+            leagueManager.managedTeam == null)
+            return;
+
+        int index = System.Array.IndexOf(
+            formations,
+            leagueManager.managedTeam.formation);
+
+        formationDropdown.SetValueWithoutNotify(
+            Mathf.Max(0, index));
+
+        formationDropdown.RefreshShownValue();
+    }
+
+    public void ChangeFormation(int index)
+    {
+        if (index < 0 ||
+            index >= formations.Length ||
+            leagueManager == null ||
+            leagueManager.managedTeam == null)
+            return;
+
+        TeamData team = leagueManager.managedTeam;
+
+        FormationType chosen = formations[index];
+
+        if (chosen == team.formation)
+            return;
+
+        if (team.squad == null ||
+            team.startingLineup == null)
+        {
+            SyncFormationDropdown();
+
+            SetMessage(
+                "Squad or lineup is missing.");
+
+            return;
+        }
+
+        var available = team.squad
+            .Where(p => p != null)
+            .Distinct()
+            .ToList();
+
+        var oldLineup = team.startingLineup;
+
+        var newLineup = new List<PlayerData>();
+
+        PlayerPosition[] requiredRoles =
+            FormationData.GetRoles(chosen);
+
+        foreach (PlayerPosition role in requiredRoles)
+        {
+            PlayerData candidate = available
+                .Where(p =>
+                    p.preferredPosition == role &&
+                    !newLineup.Contains(p))
+                .OrderByDescending(p =>
+                    oldLineup.Contains(p))
+                .ThenByDescending(p =>
+                    GetOverall(p))
+                .FirstOrDefault();
+
+            if (candidate == null)
+            {
+                SyncFormationDropdown();
+
+                SetMessage(
+                    "Not enough " + role +
+                    " players for " +
+                    FormationData.GetName(chosen) +
+                    ".");
+
+                return;
+            }
+
+            newLineup.Add(candidate);
+        }
+
+        if (newLineup.Count != 11)
+        {
+            SyncFormationDropdown();
+
+            SetMessage("Invalid formation.");
+
+            return;
+        }
+
+        team.formation = chosen;
+        team.startingLineup = newLineup;
+
+        selectedPlayer = null;
+
+        SetMessage(
+            "Formation changed to " +
+            FormationData.GetName(chosen) +
+            ".");
+
+        RefreshSquad();
+    }
+
+    // ========================================
+    // SQUAD TABLE
+    // ========================================
 
     public void RefreshSquad()
     {
@@ -63,7 +221,10 @@ public class SquadUI : MonoBehaviour
 
         TeamData team = leagueManager.managedTeam;
 
-        if (team.squad == null)
+        SyncFormationDropdown();
+
+        if (team.squad == null ||
+            team.startingLineup == null)
             return;
 
         foreach (Transform child in squadTable)
@@ -134,6 +295,10 @@ public class SquadUI : MonoBehaviour
         }
     }
 
+    // ========================================
+    // PLAYER SELECTION AND SWAPPING
+    // ========================================
+
     public void SelectPlayer(PlayerData player)
     {
         if (player == null ||
@@ -146,7 +311,9 @@ public class SquadUI : MonoBehaviour
         if (team.startingLineup == null ||
             team.startingLineup.Count != 11)
         {
-            SetMessage("Starting lineup must contain 11 players.");
+            SetMessage(
+                "Starting lineup must contain 11 players.");
+
             return;
         }
 
@@ -155,7 +322,9 @@ public class SquadUI : MonoBehaviour
             selectedPlayer = null;
 
             SetMessage("Selection cancelled.");
+
             RefreshSquad();
+
             return;
         }
 
@@ -168,6 +337,7 @@ public class SquadUI : MonoBehaviour
                 " selected. Choose a player to swap.");
 
             RefreshSquad();
+
             return;
         }
 
@@ -177,8 +347,6 @@ public class SquadUI : MonoBehaviour
         bool secondStarting =
             team.startingLineup.Contains(player);
 
-        // One player must be starting
-        // and the other must be a reserve.
         if (firstStarting == secondStarting)
         {
             selectedPlayer = player;
@@ -188,10 +356,10 @@ public class SquadUI : MonoBehaviour
                 " selected. Choose a player with opposite status.");
 
             RefreshSquad();
+
             return;
         }
 
-        // Preserve the current formation.
         if (selectedPlayer.preferredPosition !=
             player.preferredPosition)
         {
@@ -215,7 +383,6 @@ public class SquadUI : MonoBehaviour
         if (lineupIndex < 0)
             return;
 
-        // Replace the player in the same formation slot.
         team.startingLineup[lineupIndex] = incoming;
 
         selectedPlayer = null;
@@ -239,6 +406,10 @@ public class SquadUI : MonoBehaviour
         Debug.Log(message);
     }
 
+    // ========================================
+    // TABLE ROW CREATION
+    // ========================================
+
     void CreateRow(
         string[] values,
         Color background,
@@ -257,6 +428,7 @@ public class SquadUI : MonoBehaviour
         row.transform.SetParent(squadTable, false);
 
         Image image = row.GetComponent<Image>();
+
         image.color = background;
         image.raycastTarget = !isHeader;
 
@@ -283,7 +455,6 @@ public class SquadUI : MonoBehaviour
         horizontal.childForceExpandWidth = false;
         horizontal.childForceExpandHeight = true;
 
-        // Make each player row clickable.
         if (!isHeader && player != null)
         {
             Button button = row.AddComponent<Button>();
@@ -305,7 +476,9 @@ public class SquadUI : MonoBehaviour
             button.colors = colors;
 
             Navigation navigation = button.navigation;
+
             navigation.mode = Navigation.Mode.None;
+
             button.navigation = navigation;
 
             PlayerData clickedPlayer = player;
@@ -369,6 +542,10 @@ public class SquadUI : MonoBehaviour
         }
     }
 
+    // ========================================
+    // PLAYER POSITIONS
+    // ========================================
+
     string GetPosition(PlayerData player)
     {
         switch (player.preferredPosition)
@@ -389,6 +566,10 @@ public class SquadUI : MonoBehaviour
                 return "-";
         }
     }
+
+    // ========================================
+    // PLAYER OVERALL RATINGS
+    // ========================================
 
     int GetOverall(PlayerData p)
     {

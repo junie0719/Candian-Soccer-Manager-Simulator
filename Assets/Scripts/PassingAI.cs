@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PassingAI : MonoBehaviour
@@ -82,7 +83,7 @@ public class PassingAI : MonoBehaviour
     void EvaluatePassingDecision(PlayerController owner)
     {
         if (owner.data == null ||
-            owner.data.preferredPosition ==
+            owner.assignedPosition ==
             PlayerPosition.Goalkeeper)
             return;
 
@@ -120,7 +121,7 @@ public class PassingAI : MonoBehaviour
                 teammate.isHomeTeam != owner.isHomeTeam)
                 continue;
 
-            if (teammate.data.preferredPosition ==
+            if (teammate.assignedPosition ==
                 PlayerPosition.Goalkeeper)
                 continue;
 

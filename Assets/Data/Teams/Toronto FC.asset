@@ -17,6 +17,7 @@ MonoBehaviour:
   teamColor: {r: 0.64705884, g: 0.14901961, b: 0.21960784, a: 1}
   clubLogo: {fileID: 0}
   transferBudget: 20000000
+  formation: 4
   squad:
   - {fileID: 11400000, guid: 12b73840f98c7f7459ed2c0ce97a92a7, type: 2}
   - {fileID: 11400000, guid: 3543b8d456452bc49abd487902cc6076, type: 2}

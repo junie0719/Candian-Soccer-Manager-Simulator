@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -94,7 +95,7 @@ public class MatchAI : MonoBehaviour
         bool goalkeeperHasBall =
             owner != null &&
             owner.data != null &&
-            owner.data.preferredPosition ==
+            owner.assignedPosition ==
             PlayerPosition.Goalkeeper;
 
         bool teamReceivingPass =
@@ -121,7 +122,7 @@ public class MatchAI : MonoBehaviour
                 player == owner)
                 continue;
 
-            if (player.data.preferredPosition ==
+            if (player.assignedPosition ==
                 PlayerPosition.Goalkeeper)
                 continue;
 
@@ -163,7 +164,7 @@ public class MatchAI : MonoBehaviour
                 continue;
 
             // GoalkeeperAI controls goalkeeper movement.
-            if (player.data.preferredPosition ==
+            if (player.assignedPosition ==
                 PlayerPosition.Goalkeeper)
                 continue;
 
@@ -276,7 +277,7 @@ public class MatchAI : MonoBehaviour
                 target = CalculateAttackingTarget(
                     player, attackAnchor);
 
-                switch (player.data.preferredPosition)
+                switch (player.assignedPosition)
                 {
                     case PlayerPosition.Defender:
                         action = "Providing Passing Outlet";
@@ -401,7 +402,7 @@ public class MatchAI : MonoBehaviour
             if (player == null || player.data == null)
                 continue;
 
-            if (player.data.preferredPosition ==
+            if (player.assignedPosition ==
                 PlayerPosition.Goalkeeper)
                 continue;
 
@@ -415,9 +416,9 @@ public class MatchAI : MonoBehaviour
                     secondDistance < pressingDistance)
                     continue;
 
-                if (player.data.preferredPosition ==
+                if (player.assignedPosition ==
                     PlayerPosition.Defender ||
-                    player.data.preferredPosition ==
+                    player.assignedPosition ==
                     PlayerPosition.Midfielder)
                 {
                     availableMarkers.Add(player);
@@ -570,16 +571,16 @@ public class MatchAI : MonoBehaviour
             movementDistance * 0.3f;
 
         // Defenders prioritize dangerous forwards.
-        if (marker.data.preferredPosition ==
+        if (marker.assignedPosition ==
             PlayerPosition.Defender)
         {
-            if (opponent.data.preferredPosition ==
+            if (opponent.assignedPosition ==
                 PlayerPosition.Forward)
             {
                 score += 0.65f;
             }
 
-            if (opponent.data.preferredPosition ==
+            if (opponent.assignedPosition ==
                 PlayerPosition.Defender)
             {
                 score -= 0.5f;
@@ -587,10 +588,10 @@ public class MatchAI : MonoBehaviour
         }
 
         // Midfielders prioritize opposing midfielders.
-        if (marker.data.preferredPosition ==
+        if (marker.assignedPosition ==
             PlayerPosition.Midfielder)
         {
-            if (opponent.data.preferredPosition ==
+            if (opponent.assignedPosition ==
                 PlayerPosition.Midfielder)
             {
                 score += 0.45f;
@@ -683,7 +684,7 @@ public class MatchAI : MonoBehaviour
         Vector2 target = goalSideTarget;
 
         // Midfielders also try to block passing lanes.
-        if (marker.data.preferredPosition ==
+        if (marker.assignedPosition ==
             PlayerPosition.Midfielder)
         {
             Vector2 passingLaneTarget =
@@ -742,7 +743,7 @@ public class MatchAI : MonoBehaviour
 
         Vector2 target = player.homePosition;
 
-        switch (player.data.preferredPosition)
+        switch (player.assignedPosition)
         {
             case PlayerPosition.Defender:
 
@@ -827,7 +828,7 @@ public class MatchAI : MonoBehaviour
 
         float forwardPreference = 0.3f;
 
-        switch (player.data.preferredPosition)
+        switch (player.assignedPosition)
         {
             case PlayerPosition.Defender:
 

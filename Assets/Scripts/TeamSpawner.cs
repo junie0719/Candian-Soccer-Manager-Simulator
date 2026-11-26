@@ -1,45 +1,22 @@
+
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TeamSpawner : MonoBehaviour
 {
-    [Header("Player Prefab")]
+    [Header("References")]
     public GameObject playerPrefab;
 
     [Header("Teams")]
     public TeamData homeTeam;
     public TeamData awayTeam;
 
-    private Vector2[] formation = new Vector2[]
-    {
-        // Goalkeeper
-        new Vector2(-2.8f, 0f),
-
-        // Defenders
-        new Vector2(-2.1f, 1.3f),
-        new Vector2(-2.1f, 0.45f),
-        new Vector2(-2.1f, -0.45f),
-        new Vector2(-2.1f, -1.3f),
-
-        // Midfielders
-        new Vector2(-1.2f, 1f),
-        new Vector2(-1.2f, 0f),
-        new Vector2(-1.2f, -1f),
-
-        // Forwards
-        new Vector2(-0.4f, 1.2f),
-        new Vector2(-0.4f, 0f),
-        new Vector2(-0.4f, -1.2f)
-    };
-
     void Awake()
     {
         if (MatchSession.currentFixture != null)
         {
-            homeTeam =
-                MatchSession.currentFixture.homeTeam;
-
-            awayTeam =
-                MatchSession.currentFixture.awayTeam;
+            homeTeam = MatchSession.currentFixture.homeTeam;
+            awayTeam = MatchSession.currentFixture.awayTeam;
         }
     }
 
@@ -49,67 +26,136 @@ public class TeamSpawner : MonoBehaviour
             homeTeam == null ||
             awayTeam == null)
         {
-            Debug.LogError("Missing prefab or team data!");
+            Debug.LogError("TeamSpawner references are missing.");
             return;
         }
 
         if (playerPrefab.GetComponent<PlayerController>() == null)
         {
-            Debug.LogError("Player prefab needs PlayerController!");
+            Debug.LogError("Player prefab has no PlayerController.");
             return;
         }
 
+        if (!ValidateLineup(homeTeam) ||
+            !ValidateLineup(awayTeam))
+            return;
+
         SpawnTeam(homeTeam, true);
         SpawnTeam(awayTeam, false);
+    }
 
-        Debug.Log(
-            "Playing fixture: " +
-            homeTeam.teamName + " vs " +
-            awayTeam.teamName
-        );
+    bool ValidateLineup(TeamData teamData)
+    {
+        if (teamData.startingLineup == null ||
+            teamData.startingLineup.Count != 11)
+        {
+            Debug.LogError(
+                teamData.teamName +
+                " must have exactly 11 starting players.");
+
+            return false;
+        }
+
+        PlayerPosition[] roles =
+            FormationData.GetRoles(teamData.formation);
+
+        Vector2[] positions =
+            FormationData.GetPositions(teamData.formation);
+
+        if (roles.Length != 11 ||
+            positions.Length != 11)
+        {
+            Debug.LogError("Invalid formation.");
+            return false;
+        }
+
+        HashSet<PlayerData> usedPlayers =
+            new HashSet<PlayerData>();
+
+        for (int i = 0; i < 11; i++)
+        {
+            PlayerData player =
+                teamData.startingLineup[i];
+
+            if (player == null)
+            {
+                Debug.LogError(
+                    teamData.teamName +
+                    " has a missing player.");
+
+                return false;
+            }
+
+            if (!usedPlayers.Add(player))
+            {
+                Debug.LogError(
+                    teamData.teamName +
+                    " has duplicate players.");
+
+                return false;
+            }
+
+            if (player.preferredPosition != roles[i])
+            {
+                Debug.LogError(
+                    player.playerName +
+                    " does not match the required position: " +
+                    roles[i]);
+
+                return false;
+            }
+        }
+
+        return true;
     }
 
     void SpawnTeam(TeamData teamData, bool isHome)
     {
-        if (teamData.startingLineup == null ||
-            teamData.startingLineup.Count != 11 ||
-            teamData.startingLineup.Contains(null))
-        {
-            Debug.LogError(
-                teamData.teamName +
-                " needs 11 valid starting players!"
-            );
-
-            return;
-        }
-
-        GameObject team =
+        GameObject teamObject =
             new GameObject(teamData.teamName);
 
-        for (int i = 0; i < formation.Length; i++)
+        Vector2[] positions =
+            FormationData.GetPositions(teamData.formation);
+
+        PlayerPosition[] roles =
+            FormationData.GetRoles(teamData.formation);
+
+        for (int i = 0; i < 11; i++)
         {
-            Vector2 position = formation[i];
+            Vector2 spawnPosition = positions[i];
 
             if (!isHome)
-                position.x = -position.x;
+                spawnPosition.x = -spawnPosition.x;
 
-            GameObject player = Instantiate(
+            GameObject playerObject = Instantiate(
                 playerPrefab,
-                position,
+                spawnPosition,
                 Quaternion.identity,
-                team.transform
-            );
+                teamObject.transform);
 
-            player.GetComponent<SpriteRenderer>().color =
-                teamData.teamColor;
+            SpriteRenderer sprite =
+                playerObject.GetComponent<SpriteRenderer>();
+
+            if (sprite != null)
+                sprite.color = teamData.teamColor;
 
             PlayerController controller =
-                player.GetComponent<PlayerController>();
+                playerObject.GetComponent<PlayerController>();
 
             controller.Initialize(
                 teamData.startingLineup[i],
-                isHome
-            );
+                isHome);
+
+            // Assign tactical position and formation slot.
+            controller.SetTacticalPosition(
+                roles[i],
+                spawnPosition,
+                i);
         }
+
+        Debug.Log(
+            teamData.teamName +
+            " spawned in " +
+            FormationData.GetName(teamData.formation));
     }
 }
